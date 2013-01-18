@@ -21,6 +21,7 @@ public class PageTwo extends Activity implements OnClickListener {
 	private String mFirstName;
 	private String mLastName;
 	private JSONArray jsonList;
+	private ArrayList<String> people = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +117,8 @@ public class PageTwo extends Activity implements OnClickListener {
 		for (int i = 0; i < names.size(); i++) {
 			((TextView) findViewById(R.id.result)).append(", "+names.get(i));
 		}
+		
+		people = names;
 	}
 
 	private void getJSON() {
